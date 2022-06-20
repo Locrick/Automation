@@ -1,4 +1,4 @@
 Feature: Login into spotify
   test
   Scenario: Login
-    Given I am in App main site
+    Given I am in App main site www.google.com

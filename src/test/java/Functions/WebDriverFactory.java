@@ -12,11 +12,14 @@ import java.util.Properties;
 
 public class WebDriverFactory {
 
+    /** Starting  **/
     private static Properties prop = new Properties();
     private static InputStream in = CreateDriver.class.getResourceAsStream("../test./properties");
     private static String resourceFolder;
 
     private static Logger log = Logger.getLogger(WebDriverFactory.class);
+
+    private static WebDriverFactory instance = null;
 
     public static WebDriver createNewWebDriver(String browser, String os) throws IOException {
         WebDriver driver;
@@ -61,4 +64,6 @@ public class WebDriverFactory {
         return driver;
 
     }
+
+
 }

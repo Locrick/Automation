@@ -10,24 +10,24 @@ import java.io.InputStream;
 import java.util.Properties;
 
 
-public class StepDefinitions {
+public class StepsDefinitions {
 
-    private static String MainAppUrlBase;
     private static Properties prop = new Properties();
-    private static InputStream in = CreateDriver.class.getResourceAsStream("../test.properties");
+    private static InputStream in = CreateDriver.class.getResourceAsStream("../resources/test.properties");
+
     WebDriver driver;
 
-    /** Log Attribute **/
-    Logger log = Logger.getLogger(StepDefinitions.class);
+    /** Log attributes **/
 
-    public StepDefinitions(){
+    Logger log = Logger.getLogger(StepsDefinitions.class);
+
+    public StepsDefinitions(){
         driver = Hooks.driver;
     }
 
-    @Given("^I am in App main site")
-    public void iAmInAppMainSite() throws IOException {
+    @Given("I am in App main site(.*)")
+    public void iAmInAppMainSite(String url) {
 
-        String url = prop.getProperty("resourceFolder");
         log.info("Navigate to: " + url);
         driver.get(url);
     }

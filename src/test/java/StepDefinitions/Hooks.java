@@ -16,7 +16,7 @@ public class Hooks {
     public static WebDriver driver;
     // it reads the hook
     Logger log = Logger.getLogger(Hooks.class);
-    private Scenario scenario;
+    Scenario scenario = null;
 
     @Before
     public void initDriver(Scenario scenario) throws IOException {

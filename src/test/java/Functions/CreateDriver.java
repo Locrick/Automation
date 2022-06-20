@@ -14,10 +14,8 @@ public class CreateDriver {
     private static String os;
     private static String logLevel;
 
-    private static String properties = "test.properties";
     private static Properties prop = new Properties();
-    private static InputStream in = CreateDriver.class.getResourceAsStream("../test.properties");
-
+    private static InputStream in = CreateDriver.class.getResourceAsStream("../resources/test.properties");
     /** Log attributes **/
     private static Logger log = Logger.getLogger(CreateDriver.class);
     public static WebDriver initConfig() throws IOException {
